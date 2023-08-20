@@ -1,4 +1,4 @@
 {
-  "project_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}"
-  "owner": "{{ cookiecutter.owner.lower().replace(' ', '_') }}"
+  "project_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+  "owner": "{{ cookiecutter.owner }}"
 }
