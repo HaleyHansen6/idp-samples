@@ -54,6 +54,9 @@ spec:
           ui:options:
             allowedKinds:
               - Group
+        cicd-pipline:
+          title: Would you like to add a CI/CD pipeline?
+          type: boolean
         # This field is hidden but needed to authenticate the request to trigger the pipeline
         token:
           title: Harness Token
@@ -74,6 +77,19 @@ spec:
           cache: ${{ parameters.cache }}
         apikey: ${{ parameters.token }}
     # The final step is to register our new component in the catalog.
+   - id: trigger_ci_cd
+      name: Add a CI/CD pipeline for your Next.js app
+      when: ${{ parameters.cicd_pipeline }}
+      action: trigger:harness-custom-pipeline
+      input:
+        url: ""
+        inputset:
+          project_name: ${{ parameters.project_name }}
+          github_repo: ${{ parameters.github_repo }}
+          cloud_provider: ${{ parameters.cloud_provider }}
+          db: ${{ parameters.db }}
+          cache: ${{ parameters.cache }}
+        apikey: ${{ parameters.token }}
 
 
   output:
