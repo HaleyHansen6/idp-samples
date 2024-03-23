@@ -82,7 +82,7 @@ spec:
       when: ${{ parameters.cicd_pipeline }}
       action: trigger:harness-custom-pipeline
       input:
-        url: ""
+        url: "https://app.harness.io/ng/account/0Z0vv0uwRoax_oZ62jBFfg/module/idp-admin/orgs/Development_Accelerators/projects/Starter_Kits/pipelines/nextjsstarterkit_Haley_test/pipeline-studio?storeType=INLINE"
         inputset:
           project_name: ${{ parameters.project_name }}
           github_repo: ${{ parameters.github_repo }}
